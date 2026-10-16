@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Who's That Pokémon?</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#ee1515">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Who's That?">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
   <!-- Open connections to the sprite/data hosts early so the first load is faster -->
   <link rel="preconnect" href="https://msikma.github.io" crossorigin>
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="style-v2.css">
+  <link rel="stylesheet" href="./style-v2.css">
 </head>
 <body>
   <main class="pokeball" id="ball">
@@ -48,6 +58,14 @@
     Pokémon &copy; Nintendo / Creatures Inc. / GAME FREAK Inc.
   </p>
 
-  <script src="app-v2.js"></script>
+  <script src="./app-v2.js"></script>
+  <script>
+    // Register the service worker (relative path so it works in /newApp/)
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(console.error);
+      });
+    }
+  </script>
 </body>
 </html>
