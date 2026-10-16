@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Who's That Pokémon?</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Open connections to the sprite/data hosts early so the first load is faster -->
+  <link rel="preconnect" href="https://msikma.github.io" crossorigin>
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link rel="stylesheet" href="style-v2.css">
 </head>
 <body>
   <main class="pokeball" id="ball">
@@ -45,6 +48,6 @@
     Pokémon &copy; Nintendo / Creatures Inc. / GAME FREAK Inc.
   </p>
 
-  <script src="app.js"></script>
+  <script src="app-v2.js"></script>
 </body>
 </html>
