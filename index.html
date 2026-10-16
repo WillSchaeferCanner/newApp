@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who's That Pokémon?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="pokeball" id="ball">
+    <!-- Top (red) half -->
+    <header class="top">
+      <h1>Who's That Pokémon?</h1>
+      <p class="score">Streak: <span id="streak">0</span> &nbsp;|&nbsp; Best: <span id="best">0</span></p>
+    </header>
+
+    <!-- Black band across the middle -->
+    <div class="band"></div>
+
+    <!-- Center button holds the mystery sprite -->
+    <div class="center-button">
+      <div class="sprite-wrap" id="sprite-wrap">
+        <img id="sprite" alt="Mystery Pokémon silhouette" draggable="false">
+        <span id="qmark" aria-hidden="true">?</span>
+      </div>
+    </div>
+
+    <!-- Bottom (white) half -->
+    <section class="bottom">
+      <form id="guess-form" autocomplete="off">
+        <label for="guess" class="sr-only">Pokémon name</label>
+        <input id="guess" type="text" placeholder="Type the name..." autocapitalize="none" spellcheck="false" disabled>
+        <div class="buttons">
+          <button type="submit" id="guess-btn" class="btn btn-red" disabled>Guess</button>
+          <button type="button" id="giveup-btn" class="btn btn-gray" disabled>Give up</button>
+        </div>
+      </form>
+      <button type="button" id="again-btn" class="btn btn-red" hidden>Play again</button>
+      <p id="message" role="status" aria-live="polite">Loading Pokédex...</p>
+    </section>
+  </main>
+
+  <p class="credit">
+    Sprites from <a href="https://msikma.github.io/pokesprite/" target="_blank" rel="noopener">PokéSprite</a>.
+    Pokémon &copy; Nintendo / Creatures Inc. / GAME FREAK Inc.
+  </p>
+
+  <script src="app.js"></script>
+</body>
+</html>
